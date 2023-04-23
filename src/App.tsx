@@ -9,6 +9,7 @@ let [maxNumber, setMaxNumber] = useState(5)
     const incButton = () => {
         if(number < maxNumber){
             setNumber(++number)
+
         }
 
     }
