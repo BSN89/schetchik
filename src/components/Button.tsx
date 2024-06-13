@@ -3,15 +3,13 @@
 type PropsType = {
     name: string
     callBack: () => void
-    disabledIncButton: boolean
+    disabledButton?: boolean
 }
 
-export const Button = (props: PropsType) => {
-    const onClickHandler = () => {
-        props.callBack()
-    }
+export const Button = ({name, callBack, disabledButton}: PropsType) => {
+
     return (
-        <button disabled={props.disabledIncButton} onClick={onClickHandler} className={ props.disabledIncButton ? 'disableBtn' : 'buttonClass' }>{props.name}</button>
+        <button disabled={disabledButton} onClick={callBack} className={ disabledButton ? 'disableBtn' : 'buttonClass' }>{name}</button>
     );
 };
 
