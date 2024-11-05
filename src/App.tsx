@@ -1,49 +1,30 @@
 import './App.css';
-import {Button} from "./components/Button";
-import React, {ChangeEvent, useState} from "react";
-import {Setting} from "./components/Setting";
+import {Input} from "./ui/components/Input";
+import {Button} from "./ui/components/Button";
+import {CounterTitle} from "./ui/components/CounterTitle/CounterTitle";
+import React from "react";
+import {Setting} from "./ui/components/Setting";
+import {IncBlock} from "./ui/components/IncBlock/IncBlock";
+
 
 function App() {
 
-
-    let [inputTitle, setInputTitle] = useState('')
-    let [number, setNumber] = useState(+inputTitle)
-    console.log(number)
-
-    const incButton = () => {
-            setNumber(++number)
-    }
-    const resetButton = () => {
-        setNumber(0)
-    }
-
-
-
-
-
-
-    const disableResetButton = number === 0
-    const disabledIncButton = number === 5
-    const setDisabled = inputTitle !== null
     return (
-        <div className='App'>
-            <div className="container">
-                <div>
-                    <div className={ number === 5 ? 'buttonClassOff' : 'numberClass'}>{number}</div>
-                    <div className='AppButton'>
-                        <Button name={'inc'} callBack={incButton} disabledButton={disabledIncButton}/>
-                        <Button  name={'reset'} callBack={resetButton} disabledButton={disableResetButton} />
-                        <Button name={'set'} callBack={()=> {} } disabledButton={setDisabled} />
-                    </div>
-                </div>
+
+        <div>
+
+            <div className='App'>
+                <Setting/>
             </div>
 
+            <div className='App'>
+                    <IncBlock/>
+            </div>
 
-
-            <Setting callBack={ () => setInputTitle } inputTitle={inputTitle}  disabledButton={setDisabled}/>
         </div>
 
     );
 }
 
-export default App;
+export default App
+
