@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Input} from "./Input";
-import {Button} from "./Button";
-import {useAppDispatch} from "../../hooks/hooks";
-import {updateMaxValueAC, updateStartValueAC} from "../../bll/reducer";
+import {Input} from "../Input";
+import {Button} from "../Button";
+import {useAppDispatch} from "../../../hooks/hooks";
+import {updateMaxValueAC, updateStartValueAC} from "../../../bll/reducer";
 
 export const Setting = () => {
     const [start, setStart] = useState(0)
